@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>mypage</title>
+    <style type="text/css">
+      *{
+        margin:0; padding:0;
+      }
+      header {
+        top: 0px;
+        left: 0px;
+        width: 1920px;
+        height: 100px;
+        background: #D5D5D5 0% 0% no-repeat padding-box;
+        opacity: 1;
+        text-align:center;
+      }
+      .background_me_sq {
+        top: 100px;
+        left: 360px;
+        width: 1200px;
+        height: 70px;
+        background: #D5D5D5 0% 0% no-repeat padding-box;
+        opacity: 1;
+        position: absolute;
+        margin: 0;
+        padding: 0;
+      }
+      .background_me_oval {
+        top: 70px;
+        left: 360px;
+        width: 1200px;
+        height: 207px;
+        background: #D5D5D5 0% 0% no-repeat padding-box;
+        border-radius: 100px;
+        opacity: 1;
+        position: absolute;
+      }
+      .mypic {
+        top: 41px;
+        left: 100px;
+        width: 100px;
+        height: 100px;
+        background: #FFFFFF 0% 0% no-repeat padding-box;
+        opacity: 1;
+        border-radius: 100px;
+        position: absolute;
+      }
+      .myname {
+        top: 60px;
+        left: 337px;
+        width: 80px;
+        height: 24px;
+        font: Bold 20px/24px Segoe UI;
+        color: #707070;
+        opacity: 1;
+        position: absolute;
+      }
+      .btn_me {
+        top: 40px;
+        left: 962px;
+        width: 130px;
+        height: 50px;
+        background: #FFFFFF;
+        border: 2px solid #727272;
+        border-radius: 30px;
+        opacity: 1;
+        position: absolute;
+      }
+      .friendList {
+        top: 320px;
+        left: 388px;
+        width: 1144px;
+        height: 508px;
+        background: #FFFFFF 0% 0% no-repeat padding-box;
+        border: 1px solid #707070;
+        opacity: 1;
+        position: absolute;
+      }
+      .friends {
+        top: 577px;
+        left: 388px;
+        width: 1145px;
+        height: 129px;
+        opacity: 1;
+      }
+      ul{list-style:none;}
+      .tabmenu{
+        top: 860px;
+        width: 1144px;
+        left: 388px;
+        position:absolute;
+      }
+      .tabmenu ul li{
+        display:  inline-block;
+        width: 1144px;
+        text-align:center;
+        background :#f9f9f9;
+        line-height:40px;
+      }
+      .tabmenu ul li a{
+        display:block;
+        line-height:40px;
+        width: 1144px;
+        height:40px;
+        text-decoration:none;
+        color: #000;
+        font: Bold
+      }
+      .tabCon{
+        display:none;
+        box-sizing: border-box;
+        border : 5px solid #f9f9f9;
+      }
+      .btnCon:target  {
+        background : #ccc;
+      }
+      .btnCon:target .tabCon{
+        display: block;
+      }
+
+      .myclub {
+        top: 1100px;
+        left: 388px;
+        width: 1144px;
+        height: 330px;
+        background: #D5D5D5 0% 0% no-repeat padding-box;
+        border: 1px solid #707070;
+        opacity: 1;
+        position:absolute;
+      }
+    </style>
+  </head>
+  <body>
+    <script type="text/javascript">
+      location.href = "#tab1";
+    </script>
+    <header>
+      header 영역
+    </header>
+    <div class="background_me_sq"></div>
+    <div class="background_me_oval">
+        <div class="mypic"></div>
+        <div class="myname">김아무개</div>
+        <button class="btn_me" type="button">수정하기</button>
+    </div>
+
+    <div class="friendList">
+      <h3>친구목록</h3>
+      <div class="friends">
+        친구1
+      </div>
+    </div>
+
+    <div class="tabmenu">
+  <ul>
+    <li id="tab1" class="btnCon">
+      <a class="btn first" href="#tab1">참여중</a>
+      <div class="tabCon">
+        참여중인 채팅방 1 <br>
+        참여중인 채팅방 2 <br>
+        참여중인 채팅방 3
+      </div>
+    </li>
+    <li id="tab2" class="btnCon">
+      <a class="btn" href="#tab2">지난활동</a>
+      <div class="tabCon">
+        참여했던 채팅방 1 <br>
+        참여했던 채팅방 2 <br>
+        참여했던 채팅방 3
+      </div>
+    </li>
+    </div>
+
+    <div class="myclub">
+      <h3>내 동아리</h3>
+      <h4>가입한 동아리</h4>
+      <ul>
+        <li>동아리1</li>
+      </ul>
+      <ul>
+        <li>동아리2</li>
+      </ul>
+    </div>
+  </body>
+</html>
