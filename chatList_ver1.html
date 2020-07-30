@@ -1,82 +1,262 @@
-<?-- 임시 -->
-
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title></title>
+    <title>chat</title>
     <style type="text/css">
-      header {
-        top: 0.00003165006637573242px;
-        left: -0.00003534555435180664px;
-        width: 360px;
-        height: 58px;
-        background: #727272 0% 0% no-repeat padding-box;
-        opacity: 1;
-      }
-      .username {
-        top: 28px;
-        left: 10px;
-        width: 200px;
-        height: 25px;
-        text-align: center;
-        position: fixed;
-        font: Bold 18px/25px Source Sans Pro;
-        letter-spacing: 0px;
-        color: #FFFFFF;
-        opacity: 1;
-      }
-      .btn_x {
-        top: 27px;
-        left: 344px;
-        width: 19px;
-        height: 19px;
-        position: fixed;
-        opacity: 1;
-      }
+      *{
+        	box-sizing:border-box;
+        }
 
-      ul.chatter {
-        list-style: none;
-        width: 320px;
-      }
-      .chatter img {
-        opacity: 1;
-        border-radius: 100px;
-      }
-      ul.chatter li.f1 { <?-- 첫번째 목록 -->
-        top: 70px;
-        left: 30px;
-        position: absolute;
+        #container{
+        	width:750px;
+        	height:700px;
+        	background:#FFFFFF;
+        	margin:0 auto;
+        	font-size:0;
+        	border-radius:5px;
+        	overflow:hidden;
+        }
+        aside{
+        	width:260px;
+        	height:700px;
+        	background-color:#64B3D7;
+        	display:inline-block;
+        	font-size:15px;
+        	vertical-align:top;
+        }
+        main{
+        	width:490px;
+        	height:700px;
+        	display:inline-block;
+        	font-size:15px;
+        	vertical-align:top;
+        }
 
-      }
-      .name1 {
-        top:10px;
-        left:80px;
-        position: absolute;
-        font-size: 20px;
-      }
-      .fpic1 {
-        top: 0px;
-        left: 0px;
-        width: 63px;
-        height: 63px;
-        position: absolute;
-        border-bottom: 1px solid #D5D5D5;
-      }
+        aside ul {
+          /*스크롤바*/
+        	padding-left:0;
+        	margin:0;
+        	list-style-type:none;
+        	overflow-y:scroll;
+        	height:700px;
+        }
+        aside li{
+        	padding:10px 0;
+        }
+        aside li:hover{
+          /*마우스 올렸을 때 변하는색*/
+          background-color: #fff;
+        }
+        h2,h3{
+        	margin:0;
+        }
+        aside li img{
+        	border-radius:50%;
+          width: 50px;
+        	margin-left:20px;
+        	margin-right:8px;
+        }
+        aside li div{
+        	display:inline-block;
+        	vertical-align:top;
+        	margin-top:12px;
+        }
+        aside li h2{
+        	font-size:14px;
+        	color:#fff;
+        	font-weight:normal;
+        	margin-bottom:5px;
+        }
+        aside li h3{
+        	font-size:12px;
+        	color:#7e818a;
+        	font-weight:normal;
+        }
 
+        .status{
+        	width:8px;
+        	height:8px;
+        	border-radius:50%;
+        	display:inline-block;
+        	margin-right:7px;
+        }
+        .green{
+        	background-color:#58b666;
+        }
+        .orange{
+        	background-color:#ff725d;
+        }
+        .blue{
+        	background-color:#6fbced;
+        	margin-right:0;
+        	margin-left:7px;
+        }
+
+        #chat{
+        	padding-left:0;
+        	margin:0;
+        	list-style-type:none;
+        	overflow-y:scroll;
+        	height:540px;
+        	border-top:2px solid #fff;
+        	border-bottom:2px solid #fff;
+        }
+        #chat li{
+        	padding:10px 30px;
+        }
+        #chat h2,#chat h3{
+        	display:inline-block;
+        	font-size:12px;
+        	font-weight:normal;
+        }
+        #chat h3{
+        	color:#bbb;
+        }
+        #chat .entete{
+        	margin-bottom:5px;
+        }
+        #chat .message{
+        	padding:20px;
+        	color:#161c30;
+        	line-height:25px;
+        	max-width:90%;
+        	display:inline-block;
+        	text-align:left;
+        	border-radius:5px;
+        }
+        #chat .me{
+        	text-align:right;
+        }
+        #chat .you .message{
+        	background-color:#EDF0F5;
+        }
+        #chat .me .message{
+        	background-color:#6fbced;
+        }
+        #chat .triangle{
+        	width: 0;
+        	height: 0;
+        	border-style: solid;
+        	border-width: 0 10px 10px 10px;
+        }
+        #chat .you .triangle{
+        		border-color: transparent transparent #EDF0F5 transparent;
+        		margin-left:15px;
+        }
+        #chat .me .triangle{
+        		border-color: transparent transparent #6fbced transparent;
+        		margin-left:375px;
+        }
+
+        main footer{
+        	height:130px;
+        	padding:20px 30px 10px 20px;
+        }
+        main footer textarea{
+        	resize:none;
+        	border:none;
+        	display:block;
+        	width:100%;
+        	height:80px;
+        	border-radius:3px;
+        	padding:20px;
+        	font-size:13px;
+        	margin-bottom:13px;
+        }
+        main footer textarea::placeholder{
+        	color:#ddd;
+        }
+        /*
+        main footer img{
+        	height:30px;
+        	cursor:pointer;
+        }
+        */
+        main footer a{
+        	text-decoration:none;
+        	text-transform:uppercase;
+        	font-weight:bold;
+        	color:#6fbced;
+        	vertical-align:top;
+          margin-left:395px;
+        	margin-top:5px;
+        	display:inline-block;
+        }
     </style>
   </head>
   <body>
-    <header>
-      <div class="username">내 메시지</div>
-      <button class="btn_x" type="button"></button>
-    </header>
-    <ul class="chatter">
-      <li class="f1">
-        <div class="name1">Julia</div>
-        <img src="man1.png" alt="" class="fpic1">
-      </li>
-
-    </ul>
+    <div id="container">
+  	<aside>
+      <!--
+  		<header>
+			<input type="text" placeholder="search">
+		  </header>
+      -->
+  		<ul>
+			<li>
+				<img src="man1.png" alt="">
+				<div>
+					<h2>Prénom Nom</h2>
+					<h3>
+						<span class="status orange"></span>
+						offline
+					</h3>
+				</div>
+			</li>
+			<li>
+				<img src="man1.png" alt="">
+				<div>
+					<h2>Prénom Nom</h2>
+					<h3>
+						<span class="status green"></span>
+						online
+					</h3>
+				</div>
+			</li>
+  		</ul>
+  	</aside>
+  	<main>
+  		<ul id="chat">
+  			<li class="you">
+  				<div class="entete">
+  					<span class="status green"></span>
+  					<h2>축구동아리회장</h2>
+  					<h3>10:12AM, Today</h3>
+  				</div>
+  				<div class="triangle"></div>
+  				<div class="message">
+  					3시까지 뚝섬 한강공원으로 오시면 됩니다
+  				</div>
+  			</li>
+  			<li class="me">
+  				<div class="entete">
+  					<h3>10:12AM, Today</h3>
+  					<h2>me</h2>
+  					<span class="status blue"></span>
+  				</div>
+  				<div class="triangle"></div>
+  				<div class="message">
+  					아아아아아ㅏ 네네네ㅔ네네ㅔ
+  				</div>
+  			</li>
+  			<li class="me">
+  				<div class="entete">
+  					<h3>10:12AM, Today</h3>
+  					<h2>me</h2>
+  					<span class="status blue"></span>
+  				</div>
+  				<div class="triangle"></div>
+  				<div class="message">
+  					알겠습니다~
+  				</div>
+  			</li>
+  		</ul>
+  		<footer>
+  			<textarea placeholder="Type your message"></textarea>
+  			<a href="#">Send</a>
+  		</footer>
+  	</main>
+    </div>
   </body>
 </html>
