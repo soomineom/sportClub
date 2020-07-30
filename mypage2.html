@@ -12,7 +12,7 @@
         left: 0px;
         width: 1920px;
         height: 100px;
-        background: #D5D5D5 0% 0% no-repeat padding-box;
+        background: #64B3D7 0% 0% no-repeat padding-box;
         opacity: 1;
         text-align:center;
       }
@@ -21,7 +21,7 @@
         left: 360px;
         width: 1200px;
         height: 70px;
-        background: #D5D5D5 0% 0% no-repeat padding-box;
+        background: #64B3D7 0% 0% no-repeat padding-box;
         opacity: 1;
         position: absolute;
         margin: 0;
@@ -32,7 +32,7 @@
         left: 360px;
         width: 1200px;
         height: 207px;
-        background: #D5D5D5 0% 0% no-repeat padding-box;
+        background: #64B3D7 0% 0% no-repeat padding-box;
         border-radius: 100px;
         opacity: 1;
         position: absolute;
@@ -57,7 +57,7 @@
         opacity: 1;
         position: absolute;
       }
-      .btn_me {
+      .btn_me { /*수정하기 버튼 */
         top: 40px;
         left: 962px;
         width: 130px;
@@ -68,8 +68,23 @@
         opacity: 1;
         position: absolute;
       }
-      .friendList {
-        top: 320px;
+
+      .friendtext { /* 친구목록 위 글자*/
+        top: 300px;
+        left: 388px;
+        font-size:40px;
+        position: absolute;
+      }
+      .morefriend { /*전체보기 */
+        top: 300px;
+        left: 1350px;
+        font-size: 40px;
+        position: absolute;
+        background: #FFFFFF;
+        border: 0px;
+      }
+      .friendbox { /* 친구목록 테두리선 */
+        top: 360px;
         left: 388px;
         width: 1144px;
         height: 508px;
@@ -78,16 +93,24 @@
         opacity: 1;
         position: absolute;
       }
-      .friends {
-        top: 577px;
-        left: 388px;
-        width: 1145px;
-        height: 129px;
-        opacity: 1;
+      #friends li img { /* 친구 프로필사진 */
+        border-radius:50%;
+        width: 80px;
+      }
+      .fname1 { /*친구1이름*/
+        display:inline-block;
+        font-size:30px;
+      }
+      .fstar1 {
+        display:inline-block;
+        font-size:18px;
+      }
+      .fcomment {
+        font-size: 12px;
       }
       ul{list-style:none;}
       .tabmenu{
-        top: 860px;
+        top: 880px;
         width: 1144px;
         left: 388px;
         position:absolute;
@@ -120,12 +143,18 @@
         display: block;
       }
 
-      .myclub {
-        top: 1100px;
+      .myclubtext {/*내동아리 글자 */
+        top: 1130px;
+        left: 388px;
+        font-size:40px;
+        position: absolute;
+      }
+      .myclub { /*동아리 */
+        top: 1190px;
         left: 388px;
         width: 1144px;
         height: 330px;
-        background: #D5D5D5 0% 0% no-repeat padding-box;
+        background: #e3e3e3 0% 0% no-repeat padding-box;
         border: 1px solid #707070;
         opacity: 1;
         position:absolute;
@@ -146,11 +175,17 @@
         <button class="btn_me" type="button">수정하기</button>
     </div>
 
-    <div class="friendList">
-      <h3>친구목록</h3>
-      <div class="friends">
-        친구1
-      </div>
+    <div class="friendtext">친구목록</div>
+    <button class="morefriend" type="button">전체보기</button>
+    <div class="friendbox">
+      <ul id="friends">
+        <li class="f1">
+          <img src="man1.png" alt="">
+          <div class="fname1">친구이름1</div>
+          <div class="fstar1">평판4점</div>
+          <div class="fcomment">배드민턴 좋아용~ 네~</div>
+        </li>
+      </ul>
     </div>
 
     <div class="tabmenu">
@@ -173,8 +208,8 @@
     </li>
     </div>
 
+    <div class="myclubtext">내 동아리</div>
     <div class="myclub">
-      <h3>내 동아리</h3>
       <h4>가입한 동아리</h4>
       <ul>
         <li>동아리1</li>
