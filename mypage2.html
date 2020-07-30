@@ -42,19 +42,30 @@
         left: 100px;
         width: 100px;
         height: 100px;
-        background: #FFFFFF 0% 0% no-repeat padding-box;
         opacity: 1;
         border-radius: 100px;
         position: absolute;
       }
       .myname {
         top: 60px;
-        left: 337px;
+        left: 300px;
         width: 80px;
         height: 24px;
         font: Bold 20px/24px Segoe UI;
         color: #707070;
         opacity: 1;
+        position: absolute;
+      }
+      .mystar {
+        top: 65px;
+        left: 420px;
+        font-size: 14px;
+        position: absolute;
+      }
+      .mycomment {
+        top: 100px;
+        left: 300px;
+        font-size: 12px;
         position: absolute;
       }
       .btn_me { /*수정하기 버튼 */
@@ -87,7 +98,7 @@
         top: 360px;
         left: 388px;
         width: 1144px;
-        height: 508px;
+        height: 420px;
         background: #FFFFFF 0% 0% no-repeat padding-box;
         border: 1px solid #707070;
         opacity: 1;
@@ -107,6 +118,13 @@
       }
       .fcomment {
         font-size: 12px;
+      }
+
+      .myactivitytext { /* 활동목록 위 글자*/
+        top: 820px;
+        left: 388px;
+        font-size:40px;
+        position: absolute;
       }
       ul{list-style:none;}
       .tabmenu{
@@ -143,13 +161,13 @@
         display: block;
       }
 
-      .myclubtext {/*내동아리 글자 */
+      .myclubtext {/*내 동아리 글자 */
         top: 1130px;
         left: 388px;
         font-size:40px;
         position: absolute;
       }
-      .myclub { /*동아리 */
+      .myclub { /*동아리 목록*/
         top: 1190px;
         left: 388px;
         width: 1144px;
@@ -170,8 +188,10 @@
     </header>
     <div class="background_me_sq"></div>
     <div class="background_me_oval">
-        <div class="mypic"></div>
+        <img src="man1.png" class="mypic">
         <div class="myname">김아무개</div>
+        <div class="mystar">평판 5점</div>
+        <div class="mycomment">축구 좋아합니당</div>
         <button class="btn_me" type="button">수정하기</button>
     </div>
 
@@ -188,6 +208,7 @@
       </ul>
     </div>
 
+    <div class="myactivitytext">내 활동 목록</div>
     <div class="tabmenu">
   <ul>
     <li id="tab1" class="btnCon">
